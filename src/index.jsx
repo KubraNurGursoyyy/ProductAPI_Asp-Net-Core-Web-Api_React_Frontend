@@ -1,11 +1,14 @@
+// index.js
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import AppRoutes from './routes';
 import './index.css';
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container); // createRoot ile oluştur
+
+root.render(
     <React.StrictMode>
         <AppRoutes />
-    </React.StrictMode>,
-    document.getElementById('root')
+    </React.StrictMode>
 );
