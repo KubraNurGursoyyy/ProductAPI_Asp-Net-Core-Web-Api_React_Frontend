@@ -8,30 +8,24 @@ const MainView = () => {
 
   useEffect(() => {
     const loadCategories = async() => {
-      const fetchedCategories = await categoriesApi.fetchCategories();
-      if(fetchedCategories)
-        setCategories(fetchedCategories);
+      handleChanges();
     };
     loadCategories();
   }, []);//yalnızca ilk yüklendiğinde çalıştır
 
-  const handleCategoryUpdate = async () => {
+  const handleChanges = async () => {
     // Kategorileri yeniden yükle
     const fetchedCategories = await categoriesApi.fetchCategories();
     if (fetchedCategories) setCategories(fetchedCategories);
-  };
-
-  const handleCategoryDelete = async () => {
-      const fetchedCategories = await categoriesApi.fetchCategories();
-      if (fetchedCategories) setCategories(fetchedCategories);
   };
 
   return (
     <div style={{ display: 'flex' }}>
       <CategoriesTable
         categories = {categories}
-        onCategoryUpdate={handleCategoryUpdate} 
-        onCategoryDelete={handleCategoryDelete} 
+        onCategoryCreate={handleChanges}
+        onCategoryUpdate={handleChanges} 
+        onCategoryDelete={handleChanges} 
        />{/* categories propu */} 
     </div>
   );

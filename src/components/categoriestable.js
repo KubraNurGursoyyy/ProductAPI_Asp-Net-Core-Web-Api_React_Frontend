@@ -1,8 +1,9 @@
 import React from 'react';
 import './categories.css'; // CSS dosyasını içe aktarıyoruz
 import TableRow from './tablerow';
+import CategoriesForm from './categoriesform';
 
-const CategoriesTable = ({ categories, onCategoryUpdate, onCategoryDelete  }) => {
+const CategoriesTable = ({ categories, onCategoryCreate, onCategoryUpdate, onCategoryDelete  }) => {
     return (
         <table className="categories-table"> {/* CSS sınıfı ekleniyor */}
             <thead>
@@ -20,6 +21,9 @@ const CategoriesTable = ({ categories, onCategoryUpdate, onCategoryDelete  }) =>
                         onCategoryDelete={onCategoryDelete} 
                     />
                 ))}
+                <CategoriesForm
+                     onCategoryCreate={onCategoryCreate} 
+                />
             </tbody>
         </table>
     );
