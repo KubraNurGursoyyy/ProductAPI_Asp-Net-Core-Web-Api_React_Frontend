@@ -1,6 +1,6 @@
 const BASE_URL = 'https://product-api-aspnetcore.fly.dev/API';
 
-export const fetchProducts = async () => {
+const fetchProducts = async () => {
     try {
         const response = await fetch(`${BASE_URL}/products`);
         if (!response.ok) {
@@ -14,7 +14,7 @@ export const fetchProducts = async () => {
 
 
 // Create a new product
-export const createProduct = async (product) => {
+const createProduct = async (product) => {
     try {
         const response = await fetch(`${BASE_URL}/products`, {
             method: 'POST',
@@ -33,7 +33,7 @@ export const createProduct = async (product) => {
 };
 
 // Update a product
-export const updateProduct = async (productId, updatedProduct) => {
+const updateProduct = async (productId, updatedProduct) => {
     try {
         const response = await fetch(`${BASE_URL}/products/${productId}`, {
             method: 'PUT',
@@ -52,7 +52,7 @@ export const updateProduct = async (productId, updatedProduct) => {
 };
 
 // Delete a product
-export const deleteProduct = async (productId) => {
+const deleteProduct = async (productId) => {
     try {
         const response = await fetch(`${BASE_URL}/products/${productId}`, {
             method: 'DELETE',
@@ -67,7 +67,7 @@ export const deleteProduct = async (productId) => {
 };
 
 // Get filtered products
-export const fetchFilteredProducts = async (categoryId = null, maxPrice = null) => {
+const fetchFilteredProducts = async (categoryId = null, maxPrice = null) => {
     try {
         const queryParams = new URLSearchParams();
         if (categoryId) queryParams.append('categoryId', categoryId);
@@ -82,3 +82,11 @@ export const fetchFilteredProducts = async (categoryId = null, maxPrice = null) 
         console.error('Error fetching filtered products:', error);
     }
 };
+
+export default {
+    fetchProducts,
+    updateProduct,
+    deleteProduct,
+    createProduct,
+    fetchFilteredProducts
+}

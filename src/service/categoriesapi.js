@@ -1,7 +1,7 @@
 const BASE_URL = 'https://product-api-aspnetcore.fly.dev/API';
 
 // Get all categories
-export const fetchCategories = async () => {
+const fetchCategories = async () => {
     try {
         const response = await fetch(`${BASE_URL}/categories`);
         if (!response.ok) {
@@ -14,7 +14,7 @@ export const fetchCategories = async () => {
 };
 
 // Create a new category
-export const createCategory = async (category) => {
+const createCategory = async (category) => {
     try {
         const response = await fetch(`${BASE_URL}/categories`, {
             method: 'POST',
@@ -33,7 +33,7 @@ export const createCategory = async (category) => {
 };
 
 // Update a category
-export const updateCategory = async (categoryId, updatedCategory) => {
+const updateCategory = async (categoryId, updatedCategory) => {
     try {
         const response = await fetch(`${BASE_URL}/categories/${categoryId}`, {
             method: 'PUT',
@@ -52,7 +52,7 @@ export const updateCategory = async (categoryId, updatedCategory) => {
 };
 
 // Delete a category
-export const deleteCategory = async (categoryId) => {
+const deleteCategory = async (categoryId) => {
     try {
         const response = await fetch(`${BASE_URL}/categories/${categoryId}`, {
             method: 'DELETE',
@@ -65,3 +65,10 @@ export const deleteCategory = async (categoryId) => {
         console.error('Error deleting category:', error);
     }
 };
+
+export default {
+    fetchCategories,
+    updateCategory,
+    deleteCategory,
+    createCategory
+}
