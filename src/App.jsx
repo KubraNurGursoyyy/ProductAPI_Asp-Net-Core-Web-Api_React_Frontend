@@ -1,4 +1,5 @@
 import React from 'react';
+import MainView from './views/mainview';
 
 const App = () => {
     return (

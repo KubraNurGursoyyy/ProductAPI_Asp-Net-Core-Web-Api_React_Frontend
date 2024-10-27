@@ -1,12 +1,12 @@
 import React from 'react';
-import CategoryList from '../components/categorieslist';
-import ProductList from '../components/productlist';
+import CategoryTable from '../components/categoriestable';
+import ProductTable from '../components/productstable';
 
 const MainView = () => {
   return (
     <div style={{ display: 'flex' }}>
-      <CategoryList />
-      <ProductList />
+      <CategoryTable />
+      <ProductTable />
     </div>
   );
 };

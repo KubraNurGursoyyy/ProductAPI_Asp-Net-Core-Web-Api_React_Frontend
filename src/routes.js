@@ -1,15 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ProductsView from '../views/ProductsView';
-import CategoriesView from '../views/CategoriesView';
+import App from './App';
 
 const AppRoutes = () => {
     return (
         <Router>
             <Routes>
-                <Route path="/products" element={<ProductsView />} />
-                <Route path="/categories" element={<CategoriesView />} />
-                <Route path="/" element={<ProductsView />} /> {/* Default route */}
+                <Route path="/" element={<App />} /> {/* Default route */}
             </Routes>
         </Router>
     );
