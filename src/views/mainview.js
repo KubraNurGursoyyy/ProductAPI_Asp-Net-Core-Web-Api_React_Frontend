@@ -21,6 +21,7 @@ const MainView = () => {
     // Kategorileri yeniden yükle
     const fetchedCategories = await categoriesApi.fetchCategories();
     if (fetchedCategories) setCategories(fetchedCategories);
+
   };  
   
   const handleProductChanges = async () => {
@@ -38,6 +39,7 @@ const MainView = () => {
       />
       <ProductsTable
         products={products}
+        categories={categories}
         onProductCreate={handleProductChanges}
       />
     </div>

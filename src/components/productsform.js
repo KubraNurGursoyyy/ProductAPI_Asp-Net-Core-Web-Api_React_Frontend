@@ -1,21 +1,27 @@
 import React, {useState} from 'react';
 import productsApi from '../service/productsapi';
 
-const ProductsForm = ({ onProductCreate }) => { //cretaede liste güncelle
+const ProductsForm = ({ categories, onProductCreate }) => { //cretaede liste güncelle
     
     const [productName, setProductName] = useState('');
     const [productPrice, setProductPrice] = useState('');
-    const [isValid, setIsValid] = useState(true);
     const [productCategoryId, setProductCategoryId] = useState('');
     
     const handleCreate = async () => {
-        if(!productName) return;
+        if (!productName || !productPrice || !productCategoryId) {
+            alert("Lütfen tüm alanları doldurun!"); // Uyarı mesajı
+            return;
+        }
         try {
-            await productsApi.createProduct({name: productName, price: parseFloat(productPrice)});
+            await productsApi.createProduct({
+                name: productName, 
+                price: parseFloat(productPrice),
+                categoryID: productCategoryId
+            });
             onProductCreate();//listeyi güncelle
             setProductName('');
             setProductPrice('');
-            setErrorMessage('');
+            setProductCategoryId('');
 
         } catch (error) {
             console.error("Error adding product:", error);
@@ -24,6 +30,7 @@ const ProductsForm = ({ onProductCreate }) => { //cretaede liste güncelle
 
     const handlePriceChange = (e) => {
         const input = e.target.value;
+
         // Geçerli format kontrolü: #####.##
         const isValidFormat = /^(\d{0,5}(\.\d{0,2})?)?$/.test(input);
                 
@@ -50,8 +57,19 @@ const ProductsForm = ({ onProductCreate }) => { //cretaede liste güncelle
                     placeholder="00000.00"
                     value={productPrice}
                     onChange={handlePriceChange}
-                  />
-                 
+                />
+            </td>
+            <td>
+            <select value={productCategoryId}
+                    onChange={(e) => setProductCategoryId(e.target.value)}>
+                        <option value="" disabled>Lütfen Kategori Seçin</option>
+                        {categories.map((category) => (
+                            <option key={category.id} value={category.id}>
+                                {category.name}
+                            </option>
+                        ))}
+
+            </select>
             </td>
             <td>
                 <button onClick={handleCreate}>Ekle</button>

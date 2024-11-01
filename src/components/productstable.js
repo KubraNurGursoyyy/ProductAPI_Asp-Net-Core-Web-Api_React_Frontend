@@ -2,7 +2,7 @@ import React from 'react';
 import './table.css'; // CSS dosyasını içe aktarıyoruz
 import ProductsForm from './productsform';
 
-const ProductsTable = ({ products, onProductCreate }) => {
+const ProductsTable = ({ products, categories, onProductCreate }) => {
     return (
         <table className="categories-table"> {/* CSS sınıfı ekleniyor */}
             <thead>
@@ -15,7 +15,8 @@ const ProductsTable = ({ products, onProductCreate }) => {
             </thead>
             <tbody>
                 <ProductsForm
-                     onProductCreate={onProductCreate} 
+                    categories={categories}
+                    onProductCreate={onProductCreate} 
                 />
             </tbody>
         </table>
