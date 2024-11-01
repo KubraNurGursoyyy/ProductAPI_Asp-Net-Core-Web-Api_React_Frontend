@@ -8,7 +8,8 @@ const TableRow = ({ category, onCategoryUpdate, onCategoryDelete }) => {
     
     const handleUpdate = async () => {
         if(isEditing) {
-            await categoriesApi.updateCategory(category.id, {name: editedName}).then(() => {
+            console.log("update " + category.id , editedName)
+            await categoriesApi.updateCategory(category.id, {id: category.id, name: editedName}).then(() => {
                 onCategoryUpdate();//listeyi güncelle
                 setIsEditing(false);
             }).catch(error => console.error("Update failed", error));
@@ -17,6 +18,7 @@ const TableRow = ({ category, onCategoryUpdate, onCategoryDelete }) => {
         }
     };
     const handleDelete = async () => {
+        console.log("delete " + category.id)
         await categoriesApi.deleteCategory(category.id)
             .then(() => {
                 onCategoryDelete(); // Listeyi güncelle
