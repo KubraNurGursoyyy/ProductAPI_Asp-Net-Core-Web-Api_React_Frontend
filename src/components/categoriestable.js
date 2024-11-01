@@ -1,5 +1,5 @@
 import React from 'react';
-import './categories.css'; // CSS dosyasını içe aktarıyoruz
+import './table.css'; // CSS dosyasını içe aktarıyoruz
 import TableRow from './tablerow';
 import CategoriesForm from './categoriesform';
 
