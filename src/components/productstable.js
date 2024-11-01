@@ -1,8 +1,9 @@
 import React from 'react';
 import './table.css'; // CSS dosyasını içe aktarıyoruz
 import ProductsForm from './productsform';
+import TableRowProducts from './tablerowproducts'
 
-const ProductsTable = ({ products, categories, onProductCreate }) => {
+const ProductsTable = ({ products, categories, onProductCreate, onProductUpdate, onProductDelete}) => {
     return (
         <table className="categories-table"> {/* CSS sınıfı ekleniyor */}
             <thead>
@@ -14,6 +15,14 @@ const ProductsTable = ({ products, categories, onProductCreate }) => {
                 </tr>
             </thead>
             <tbody>
+                {products.map((product) => (
+                    <TableRowProducts 
+                        key={product.id} 
+                        product={product} 
+                        onProductUpdate={onProductUpdate} 
+                        onProductDelete={onProductDelete} 
+                    />
+                ))}
                 <ProductsForm
                     categories={categories}
                     onProductCreate={onProductCreate} 

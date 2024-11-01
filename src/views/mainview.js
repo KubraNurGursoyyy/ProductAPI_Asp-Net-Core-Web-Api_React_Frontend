@@ -41,6 +41,8 @@ const MainView = () => {
         products={products}
         categories={categories}
         onProductCreate={handleProductChanges}
+        onProductUpdate={handleProductChanges}
+        onProductDelete={handleProductChanges}
       />
     </div>
   );

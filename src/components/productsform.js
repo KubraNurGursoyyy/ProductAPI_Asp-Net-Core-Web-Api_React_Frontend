@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import productsApi from '../service/productsapi';
+import PriceForm from './priceform';
 
 const ProductsForm = ({ categories, onProductCreate }) => { //cretaede liste güncelle
     
@@ -28,17 +29,6 @@ const ProductsForm = ({ categories, onProductCreate }) => { //cretaede liste gü
         }
     };
 
-    const handlePriceChange = (e) => {
-        const input = e.target.value;
-
-        // Geçerli format kontrolü: #####.##
-        const isValidFormat = /^(\d{0,5}(\.\d{0,2})?)?$/.test(input);
-                
-       if (isValidFormat) {
-        setProductPrice(input);
-    }
-    };
-
     //ürün name, price, kategoriId var
     return (
         <tr>
@@ -52,12 +42,7 @@ const ProductsForm = ({ categories, onProductCreate }) => { //cretaede liste gü
                 ></input>
             </td>
             <td>
-                <input
-                    type="text"
-                    placeholder="00000.00"
-                    value={productPrice}
-                    onChange={handlePriceChange}
-                />
+                <PriceForm value={productPrice} onChange={setProductPrice} /> {/* PriceForm componenti */}
             </td>
             <td>
             <select value={productCategoryId}

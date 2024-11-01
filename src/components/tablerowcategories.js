@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import categoriesApi from '../service/categoriesapi';
 
-const TableRow = ({ category, onCategoryUpdate, onCategoryDelete }) => {
+const TableRowCategories = ({ category, onCategoryUpdate, onCategoryDelete }) => {
     
     const [isEditing, setIsEditing] = useState(false);
     const [editedName, setEditedName] = useState(category.name);
@@ -48,4 +48,4 @@ const TableRow = ({ category, onCategoryUpdate, onCategoryDelete }) => {
     );
 };
 
-export default TableRow;
+export default TableRowCategories;

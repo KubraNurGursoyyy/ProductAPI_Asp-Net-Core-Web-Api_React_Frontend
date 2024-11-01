@@ -1,6 +1,6 @@
 import React from 'react';
 import './table.css'; // CSS dosyasını içe aktarıyoruz
-import TableRow from './tablerow';
+import TableRowCategories from './tablerowcategories';
 import CategoriesForm from './categoriesform';
 
 const CategoriesTable = ({ categories, onCategoryCreate, onCategoryUpdate, onCategoryDelete  }) => {
@@ -14,7 +14,7 @@ const CategoriesTable = ({ categories, onCategoryCreate, onCategoryUpdate, onCat
             </thead>
             <tbody>
                 {categories.map((category) => (
-                    <TableRow 
+                    <TableRowCategories 
                         key={category.id} 
                         category={category} 
                         onCategoryUpdate={onCategoryUpdate} 
