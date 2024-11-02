@@ -69,3 +69,41 @@ button{
   background: transparent;
   cursor: pointer
 }
+
+/* Input ve select elemanları */
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Placeholder rengi */
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Select için ok rengi */
+select {
+  -webkit-appearance: none; /* Safari ve Chrome için ok işaretini kaldırır */
+  -moz-appearance: none; /* Firefox için ok işaretini kaldırır */
+  appearance: none;
+}
+
+/* Farklı hover ve focus efektleri */
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Option elemanları için stil */
+option {
+  background-color: #55608f;
+  color: #fff;
+}
