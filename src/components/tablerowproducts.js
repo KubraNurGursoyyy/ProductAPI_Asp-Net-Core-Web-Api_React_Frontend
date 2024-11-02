@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import productsapi from '../service/productsapi';
 import PriceForm from './priceform';
-import { CiTrash, CiSaveDown1, CiEdit } from "react-icons/ci";
+import { CiTrash, CiSaveDown1, CiEdit, CiCircleRemove } from "react-icons/ci";
 
 const TableRowProducts = ({ product, onProductUpdate, onProductDelete }) => {
 
@@ -58,9 +58,17 @@ const TableRowProducts = ({ product, onProductUpdate, onProductDelete }) => {
                     :<CiEdit size={25} />
                     }
                 </button>
-                <button onClick={handleDelete}>
-                    <CiTrash size={25} />
-                </button>
+            </td>
+            <td>
+                {isEditing ? (
+                    <button onClick={() => setIsEditing(false)}>
+                        <CiCircleRemove size={25} />
+                    </button>
+                ) : (
+                    <button onClick={handleDelete}>
+                        <CiTrash size={25} />
+                    </button>
+                )}
             </td>
         </tr>
     );

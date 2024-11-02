@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import categoriesApi from '../service/categoriesapi';
-import { CiTrash, CiSaveDown1, CiEdit } from "react-icons/ci";
+import { CiTrash, CiSaveDown1, CiEdit, CiCircleRemove } from "react-icons/ci";
 
 const TableRowCategories = ({ category, onCategoryUpdate, onCategoryDelete }) => {
     
@@ -46,9 +46,17 @@ const TableRowCategories = ({ category, onCategoryUpdate, onCategoryDelete }) =>
                     :<CiEdit size={25} />
                     }
                 </button>
-                <button onClick={handleDelete}>
-                    <CiTrash size={25} />
-                </button>
+            </td>
+            <td>
+                {isEditing ? (
+                    <button onClick={() => setIsEditing(false)}>
+                        <CiCircleRemove size={25} />
+                    </button>
+                ) : (
+                    <button onClick={handleDelete}>
+                        <CiTrash size={25} />
+                    </button>
+                )}
             </td>
         </tr>
     );
