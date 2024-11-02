@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import productsapi from '../service/productsapi';
 import PriceForm from './priceform';
+import { CiTrash, CiSaveDown1, CiEdit } from "react-icons/ci";
 
 const TableRowProducts = ({ product, onProductUpdate, onProductDelete }) => {
 
@@ -49,11 +50,17 @@ const TableRowProducts = ({ product, onProductUpdate, onProductDelete }) => {
                 ):(product.price)
                 }
             </td>
+            <td>{product.categoryID}</td>
             <td>
                 <button onClick={handleUpdate}>
-                    {isEditing ? 'Kaydet' : 'Güncelle'}
+                    {isEditing ? 
+                    <CiSaveDown1 size={25}/> 
+                    :<CiEdit size={25} />
+                    }
                 </button>
-                <button onClick={handleDelete}>Sil</button>
+                <button onClick={handleDelete}>
+                    <CiTrash size={25} />
+                </button>
             </td>
         </tr>
     );

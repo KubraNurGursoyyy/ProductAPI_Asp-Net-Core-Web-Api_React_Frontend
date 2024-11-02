@@ -5,7 +5,7 @@ import TableRowProducts from './tablerowproducts'
 
 const ProductsTable = ({ products, categories, onProductCreate, onProductUpdate, onProductDelete}) => {
     return (
-        <table className="categories-table"> {/* CSS sınıfı ekleniyor */}
+        <table> {/* CSS sınıfı ekleniyor */}
             <thead>
                 <tr>
                     <th>ID</th>

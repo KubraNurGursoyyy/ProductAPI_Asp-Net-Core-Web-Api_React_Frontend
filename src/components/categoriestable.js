@@ -5,7 +5,7 @@ import CategoriesForm from './categoriesform';
 
 const CategoriesTable = ({ categories, onCategoryCreate, onCategoryUpdate, onCategoryDelete  }) => {
     return (
-        <table className="categories-table"> {/* CSS sınıfı ekleniyor */}
+        <table> {/* CSS sınıfı ekleniyor */}
             <thead>
                 <tr>
                     <th>ID</th>
