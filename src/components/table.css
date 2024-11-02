@@ -111,3 +111,26 @@ option {
   background-color: #55608f;
   color: #fff;
 }
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Tablo ile filtre alanı arasındaki boşluk */
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2); /* Filtre alanının arka plan rengi */
+  border-radius: 8px; /* Kenarların yuvarlaklığı */
+}
+
+/* Giriş ve seçim elemanları için stil */
+.filter-container select {
+  width: 30%; /* Genişlik ayarı */
+  padding: 10px; /* İçerik boşluğu */
+  border: none; /* Kenar çizgisi yok */
+  border-radius: 4px; /* Kenarların yuvarlaklığı */
+  background-color: rgba(255, 255, 255, 0.3); /* Arka plan rengi */
+  color: #fff; /* Yazı rengi */
+  font-size: 16px; /* Yazı boyutu */
+  margin-right: 10px; /* Elemanlar arasındaki boşluk */
+  margin-left: 30px; /* Elemanlar arasındaki boşluk */
+}
