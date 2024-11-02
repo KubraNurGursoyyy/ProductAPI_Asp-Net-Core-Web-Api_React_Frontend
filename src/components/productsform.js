@@ -48,7 +48,7 @@ const ProductsForm = ({ categories, onProductCreate }) => { //cretaede liste gü
             <td>
             <select value={productCategoryId}
                     onChange={(e) => setProductCategoryId(e.target.value)}>
-                        <option value="" disabled>Select Category</option>
+                        <option value="" disabled>Category</option>
                         {categories.map((category) => (
                             <option key={category.id} value={category.id}>
                                 {category.name}

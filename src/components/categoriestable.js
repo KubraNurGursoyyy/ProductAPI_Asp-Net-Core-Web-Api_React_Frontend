@@ -10,6 +10,8 @@ const CategoriesTable = ({ categories, onCategoryCreate, onCategoryUpdate, onCat
                 <tr>
                     <th>ID</th>
                     <th>Category Name</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>

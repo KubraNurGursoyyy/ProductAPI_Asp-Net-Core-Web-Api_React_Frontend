@@ -12,6 +12,8 @@ const ProductsTable = ({ products, categories, onProductCreate, onProductUpdate,
                     <th>Product Name</th>
                     <th>Price</th>
                     <th>Category</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
