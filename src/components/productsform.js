@@ -11,7 +11,7 @@ const ProductsForm = ({ categories, onProductCreate }) => { //cretaede liste gü
     
     const handleCreate = async () => {
         if (!productName || !productPrice || !productCategoryId) {
-            alert("Lütfen tüm alanları doldurun!"); // Uyarı mesajı
+            alert("Please Fill In All Fileds!"); // Uyarı mesajı
             return;
         }
         try {
@@ -37,7 +37,7 @@ const ProductsForm = ({ categories, onProductCreate }) => { //cretaede liste gü
             <td>
                 <input
                     type='text'
-                    placeholder='Yeni Ürün Ekleyin'
+                    placeholder='Add Product'
                     value={productName}
                     onChange={(e) => setProductName(e.target.value)}
                 ></input>
@@ -48,7 +48,7 @@ const ProductsForm = ({ categories, onProductCreate }) => { //cretaede liste gü
             <td>
             <select value={productCategoryId}
                     onChange={(e) => setProductCategoryId(e.target.value)}>
-                        <option value="" disabled>Lütfen Kategori Seçin</option>
+                        <option value="" disabled>Select Category</option>
                         {categories.map((category) => (
                             <option key={category.id} value={category.id}>
                                 {category.name}

@@ -24,7 +24,7 @@ const CategoriesForm = ({ onCategoryCreate }) => { //cretaede liste güncelle
             <td>
                 <input
                     type='text'
-                    placeholder='Yeni Kategori Ekleyin'
+                    placeholder='Add Category'
                     value={categoryName}
                     onChange={(e) => setCategoryName(e.target.value)}
                 ></input>
