@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import productsApi from '../service/productsapi';
 import PriceForm from './priceform';
+import { CiCirclePlus } from "react-icons/ci";
 
 const ProductsForm = ({ categories, onProductCreate }) => { //cretaede liste güncelle
     
@@ -57,7 +58,9 @@ const ProductsForm = ({ categories, onProductCreate }) => { //cretaede liste gü
             </select>
             </td>
             <td>
-                <button onClick={handleCreate}>Ekle</button>
+                <button onClick={handleCreate}>
+                    <CiCirclePlus size={25}/>
+                </button>
             </td>
         </tr>
     );

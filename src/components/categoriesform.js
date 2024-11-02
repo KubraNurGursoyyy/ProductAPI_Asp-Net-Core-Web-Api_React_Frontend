@@ -1,6 +1,7 @@
 //bu listenin sonundaki component olacak burada yeni category ekleyebileceğiz.
 import React, {useState} from 'react';
 import categoriesApi from '../service/categoriesapi';
+import { CiCirclePlus } from "react-icons/ci";
 
 const CategoriesForm = ({ onCategoryCreate }) => { //cretaede liste güncelle
     
@@ -29,7 +30,9 @@ const CategoriesForm = ({ onCategoryCreate }) => { //cretaede liste güncelle
                 ></input>
             </td>
             <td>
-                <button onClick={handleCreate}>Ekle</button>
+                <button onClick={handleCreate}>
+                <CiCirclePlus size={25} />
+                </button>
             </td>
         </tr>
     );
