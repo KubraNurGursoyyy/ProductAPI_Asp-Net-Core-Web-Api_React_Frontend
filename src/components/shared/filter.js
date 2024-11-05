@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import productsApi from '../service/productsapi';
+import productsApi from '../../service/productsapi';
 import PriceForm from './priceform';
 import { CiCircleCheck, CiCircleRemove } from "react-icons/ci";
 

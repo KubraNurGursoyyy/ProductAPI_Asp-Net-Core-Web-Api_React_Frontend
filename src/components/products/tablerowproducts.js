@@ -1,17 +1,25 @@
 import React, {useState} from 'react';
-import categoriesApi from '../service/categoriesapi';
+import productsapi from '../../service/productsapi';
+import PriceForm from '../shared/priceform';
 import { CiTrash, CiSaveDown1, CiEdit, CiCircleRemove } from "react-icons/ci";
 
-const TableRowCategories = ({ category, onCategoryUpdate, onCategoryDelete }) => {
-    
+const TableRowProducts = ({ product, categories, onProductUpdate, onProductDelete }) => {
+
     const [isEditing, setIsEditing] = useState(false);
-    const [editedName, setEditedName] = useState(category.name);
+    const [editedName, setEditedName] = useState(product.name);
+    const [editedPrice, setEditedPrice] = useState(product.price);
+    
+    const category = categories.find(cat => cat.id === product.categoryID);
+    const categoryName = category ? category.name : "Unknown";
+
     
     const handleUpdate = async () => {
         if(isEditing) {
-            console.log("update " + category.id , editedName)
-            await categoriesApi.updateCategory(category.id, {id: category.id, name: editedName}).then(() => {
-                onCategoryUpdate();//listeyi güncelle
+            await productsapi.updateProduct(
+                product.id, 
+                {id: product.id, name: editedName, price: editedPrice, categoryID: product.categoryID})
+                .then(() => {
+                onProductUpdate();//listeyi güncelle
                 setIsEditing(false);
             }).catch(error => console.error("Update failed", error));
         }else {
@@ -19,16 +27,16 @@ const TableRowCategories = ({ category, onCategoryUpdate, onCategoryDelete }) =>
         }
     };
     const handleDelete = async () => {
-        console.log("delete " + category.id)
-        await categoriesApi.deleteCategory(category.id)
+        console.log("delete " + product.id)
+        await productsapi.deleteProduct(product.id)
             .then(() => {
-                onCategoryDelete(); // Listeyi güncelle
+                onProductDelete(); // Listeyi güncelle
             })
             .catch(error => console.error("Delete failed", error));
     };
     return (
         <tr>
-            <td>{category.id}</td>
+            <td>{product.id}</td>
             <td>
                 {isEditing ? (
                     <input
@@ -36,9 +44,16 @@ const TableRowCategories = ({ category, onCategoryUpdate, onCategoryDelete }) =>
                         value={editedName}
                         onChange={(e) => setEditedName(e.target.value)}
                         />
-                ):(category.name)
+                ):(product.name)
                 }
             </td>
+            <td>
+                {isEditing ? (
+                    <PriceForm value={editedPrice} onChange={setEditedPrice} /> 
+                ):(product.price)
+                }
+            </td>
+            <td>{categoryName}</td>
             <td>
                 <button onClick={handleUpdate}>
                     {isEditing ? 
@@ -62,4 +77,4 @@ const TableRowCategories = ({ category, onCategoryUpdate, onCategoryDelete }) =>
     );
 };
 
-export default TableRowCategories;
+export default TableRowProducts;

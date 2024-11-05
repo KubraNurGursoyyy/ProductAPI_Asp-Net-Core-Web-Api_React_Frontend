@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import './table.css'; // CSS dosyasını içe aktarıyoruz
+import '../table.css';
 import ProductsForm from './productsform';
 import TableRowProducts from './tablerowproducts';
-import Filter from './filter';
+import Filter from '../shared/filter';
 
 const ProductsTable = ({ products, categories, onProductCreate, onProductUpdate, onProductDelete}) => {
     

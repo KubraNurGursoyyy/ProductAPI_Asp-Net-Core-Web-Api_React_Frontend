@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import CategoriesTable from '../components/categoriestable';
+import CategoriesTable from '../components/categories/categoriestable';
 import categoriesApi from '../service/categoriesapi';
 import productsapi from '../service/productsapi';
-import ProductsTable from '../components/productstable';
+import ProductsTable from '../components/products/productstable';
 
 const MainView = () => {
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import './table.css'; // CSS dosyasını içe aktarıyoruz
-import TableRowCategories from './tablerowcategories';
+import '../table.css';
 import CategoriesForm from './categoriesform';
+import TableRowCategories from './tablerowcategories'
 
 const CategoriesTable = ({ categories, onCategoryCreate, onCategoryUpdate, onCategoryDelete  }) => {
     return (

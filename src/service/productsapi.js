@@ -13,7 +13,6 @@ const fetchProducts = async () => {
 };
 
 
-// Create a new product
 const createProduct = async (product) => {
     try {
         const response = await fetch(`${BASE_URL}/products`, {
@@ -32,7 +31,6 @@ const createProduct = async (product) => {
     }
 };
 
-// Update a product
 const updateProduct = async (productId, updatedProduct) => {
     try {
         const response = await fetch(`${BASE_URL}/products/${productId}`, {
@@ -51,7 +49,6 @@ const updateProduct = async (productId, updatedProduct) => {
     }
 };
 
-// Delete a product
 const deleteProduct = async (productId) => {
     try {
         const response = await fetch(`${BASE_URL}/products/${productId}`, {
@@ -66,7 +63,6 @@ const deleteProduct = async (productId) => {
     }
 };
 
-// Get filtered products
 const fetchFilteredProducts = async (categoryId = null, maxPrice = null) => {
     try {
         const queryParams = new URLSearchParams();

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import productsApi from '../service/productsapi';
-import PriceForm from './priceform';
+import productsApi from '../../service/productsapi';
+import PriceForm from '../shared/priceform';
 import { CiCirclePlus } from "react-icons/ci";
 
 const ProductsForm = ({ categories, onProductCreate }) => { //cretaede liste güncelle
