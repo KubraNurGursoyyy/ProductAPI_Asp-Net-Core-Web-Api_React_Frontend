@@ -57,7 +57,11 @@ const deleteProduct = async (productId) => {
         if (!response.ok) {
             throw new Error('Failed to delete product');
         }
-        return await response.json();
+        if (response.status !== 204) {
+            return await response.json();
+        } else {
+            return;
+        } 
     } catch (error) {
         console.error('Error deleting product:', error);
     }

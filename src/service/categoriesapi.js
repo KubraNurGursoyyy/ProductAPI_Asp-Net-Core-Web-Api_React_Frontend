@@ -56,7 +56,11 @@ const deleteCategory = async (categoryId) => {
         if (!response.ok) {
             throw new Error('Failed to delete category');
         }
-        return await response.json();
+        if (response.status !== 204) {
+            return await response.json();
+        } else {
+            return;
+        } 
     } catch (error) {
         console.error('Error deleting category:', error);
     }
