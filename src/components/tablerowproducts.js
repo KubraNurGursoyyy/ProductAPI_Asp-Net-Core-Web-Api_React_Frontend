@@ -3,12 +3,15 @@ import productsapi from '../service/productsapi';
 import PriceForm from './priceform';
 import { CiTrash, CiSaveDown1, CiEdit, CiCircleRemove } from "react-icons/ci";
 
-const TableRowProducts = ({ product, onProductUpdate, onProductDelete }) => {
+const TableRowProducts = ({ product, categories, onProductUpdate, onProductDelete }) => {
 
     const [isEditing, setIsEditing] = useState(false);
     const [editedName, setEditedName] = useState(product.name);
     const [editedPrice, setEditedPrice] = useState(product.price);
     
+    const category = categories.find(cat => cat.id === product.categoryID);
+    const categoryName = category ? category.name : "Unknown";
+
     
     const handleUpdate = async () => {
         if(isEditing) {
@@ -50,7 +53,7 @@ const TableRowProducts = ({ product, onProductUpdate, onProductDelete }) => {
                 ):(product.price)
                 }
             </td>
-            <td>{product.categoryID}</td>
+            <td>{categoryName}</td>
             <td>
                 <button onClick={handleUpdate}>
                     {isEditing ? 

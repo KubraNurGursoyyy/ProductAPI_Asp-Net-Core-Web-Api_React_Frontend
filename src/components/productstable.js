@@ -40,6 +40,7 @@ const ProductsTable = ({ products, categories, onProductCreate, onProductUpdate,
                         <TableRowProducts 
                             key={product.id} 
                             product={product} 
+                            categories={categories}
                             onProductUpdate={onProductUpdate} 
                             onProductDelete={onProductDelete} 
                         />
