@@ -1,14 +1,15 @@
 {
-  "homepage": "https://KubraNurGursoyyy.github.io/ProductAPI_Asp-Net-Core-Web-Api_React_Frontend",
   "name": "productapi_asp-net-core-web-api_react_frontend",
   "version": "1.0.0",
   "main": "index.js",
-"scripts": {
-  "start": "webpack serve",    
-  "build": "webpack",        
-  "predeploy": "npm run build", 
-  "deploy": "gh-pages -d dist" 
-},
+  "homepage": "https://KubraNurGursoyyy.github.io/ProductAPI_Asp-Net-Core-Web-Api_React_Frontend",
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack",
+    "serve": "http-server ./dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
