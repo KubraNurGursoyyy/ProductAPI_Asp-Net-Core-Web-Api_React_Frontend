@@ -1,0 +1,193 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(45deg, #49a09d, #5f2c82);
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+table {
+  width: 800px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+  padding: 15px;
+  background-color: rgba(255,255,255,0.2);
+  color: #fff;
+  text-align: center;
+
+}
+
+th {
+  text-align: left;
+}
+
+thead {
+  th {
+    background-color: #55608f;
+    text-align: center;
+
+  }
+}
+
+tbody {
+  tr {
+    &:hover {
+      background-color: rgba(255,255,255,0.3);
+    }
+  }
+  td {
+    position: relative;
+    &:hover {
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -9999px;
+        bottom: -9999px;
+        background-color: rgba(255,255,255,0.2);
+        z-index: -1;
+      }
+    }
+  }
+}
+
+button{
+  border: none;
+  background: transparent;
+  cursor: pointer
+}
+
+/* Input ve select elemanları */
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Placeholder rengi */
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Select için ok rengi */
+select {
+  -webkit-appearance: none; /* Safari ve Chrome için ok işaretini kaldırır */
+  -moz-appearance: none; /* Firefox için ok işaretini kaldırır */
+  appearance: none;
+}
+
+/* Farklı hover ve focus efektleri */
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Option elemanları için stil */
+option {
+  background-color: #55608f;
+  color: #fff;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Tablo ile filtre alanı arasındaki boşluk */
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2); /* Filtre alanının arka plan rengi */
+  border-radius: 8px; /* Kenarların yuvarlaklığı */
+}
+
+/* Giriş ve seçim elemanları için stil */
+.filter-container select {
+  width: 30%; /* Genişlik ayarı */
+  padding: 10px; /* İçerik boşluğu */
+  border: none; /* Kenar çizgisi yok */
+  border-radius: 4px; /* Kenarların yuvarlaklığı */
+  background-color: rgba(255, 255, 255, 0.3); /* Arka plan rengi */
+  color: #fff; /* Yazı rengi */
+  font-size: 16px; /* Yazı boyutu */
+  margin-right: 10px; /* Elemanlar arasındaki boşluk */
+  margin-left: 30px; /* Elemanlar arasındaki boşluk */
+}
+
+/* Warning Box için Stil */
+.warning-box {
+  display: flex;
+  flex-direction: row; /* Butonların alt alta yerleşmesini sağlar */
+  justify-content: center;
+  align-items: center;
+  max-width: 100%; /* Maksimum genişlik */
+  width: 100%; /* Ekran boyutuna göre esneklik */
+  padding: 15px;
+  margin: 10px auto;
+  background-color: #55608f;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  box-sizing: border-box; /* Padding'in genişlik üzerinde etkisi olmasın */
+  max-height: 250px; /* Box için maksimum yükseklik */
+  overflow: auto; /* Taşan içerik için kaydırma çubuğu ekle */
+}
+
+.warning-box p {
+  margin: 0 0 10px;
+  font-size: 16px; /* Dinamik font boyutu (vw ile) */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+ }
+
+.warning-box button {
+  padding: 8px 15px;
+  margin: 5px;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.warning-box button:first-child {
+  background-color: #28a745; /* Onay butonu için yeşil renk */
+}
+
+.warning-box button:last-child {
+  background-color: #dc3545; /* İptal butonu için kırmızı renk */
+}
+
+.warning-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  color: #ffecd1; /* Daha açık bir renk tonuyla ürünleri vurgulamak için */
+}
+
+.warning-box li {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
