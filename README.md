@@ -9,7 +9,7 @@ Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları takip ed
 ### Gereksinimler
 
 - Node.js ve npm yüklü olmalıdır.
-- React ve Kendo UI bileşenleri.
+- React
 
 ### Kurulum
 
